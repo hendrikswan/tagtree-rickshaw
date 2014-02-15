@@ -1,0 +1,19 @@
+<div class="header">
+  <h3 class="text-muted">ufo sightings in 2008</h3>
+</div>
+
+
+
+
+<select   ng-options="renderer for renderer in renderers" 
+          ng-model="renderer">
+</select>
+
+<rickshaw-chart 
+    data="sightingsByDate" 
+    renderer="renderer"
+    color="steelblue"
+    width="700"
+    height="450"  
+    >
+</rickshaw-chart>
