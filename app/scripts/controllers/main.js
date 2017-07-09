@@ -3,16 +3,15 @@
 
 angular.module('d3chartsApp')
   .controller('MainCtrl', function($scope, $http, /* jshint unused: vars */ $routeParams) {
+    $scope.renderers = [
+      'line',
+      'bar',
+      'scatterplot',
+      'area'
+    ];
+    $scope.renderer = 'line';
+
     $http.get('data/sightings.json').success(function(result) {
-
-      $scope.renderers = [
-        'line',
-        'bar',
-        'scatterplot',
-        'area'
-      ];
-
-      $scope.renderer = 'line';
 
       var sightings = _(result)
         .chain()
