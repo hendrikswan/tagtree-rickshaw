@@ -11,7 +11,7 @@ angular.module('d3chartsApp')
       template: '<div></div>',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        scope.$watchCollection('[data, renderer]', function(newVal, oldVal) {
+        scope.$watchCollection('[data, renderer]', function(newVal, /* jshint unused: vars */ oldVal) {
           if (!newVal[0]) {
             return;
           }
@@ -39,16 +39,14 @@ angular.module('d3chartsApp')
           });
           xAxis.render();
 
-
-          var hoverDetail = new Rickshaw.Graph.HoverDetail({
+          new Rickshaw.Graph.HoverDetail({
             graph: graph,
-            formatter: function(series, x, y, formattedX, formattedY, d) {
+            formatter: function(series, x, y, formattedX, formattedY, /* jshint unused: vars */ d) {
               return formattedY;
             }
           });
 
           graph.render();
-
 
         });
       }

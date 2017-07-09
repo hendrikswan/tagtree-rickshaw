@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('d3chartsApp')
-  .controller('MainCtrl', function($scope, $http, $routeParams) {
+  .controller('MainCtrl', function($scope, $http, /* jshint unused: vars */ $routeParams) {
     $http.get('data/sightings.json').success(function(result) {
 
       $scope.renderers = [
