@@ -15,6 +15,6 @@ describe('Directive: rickshawChart', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<rickshaw-chart></rickshaw-chart>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the rickshawChart directive');
+    expect(element.text()).toBe('');
   }));
 });

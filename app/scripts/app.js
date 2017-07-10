@@ -11,7 +11,7 @@ angular.module('d3chartsApp', [
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })    
+      })
       .otherwise({
         redirectTo: '/'
       });
