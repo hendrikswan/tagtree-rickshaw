@@ -11,6 +11,12 @@ angular.module('d3chartsApp')
     ];
     $scope.renderer = 'line';
 
+    $scope.sightingsByDate = [{
+      x: 0,
+      y: 0,
+      y0: 0
+    }];
+
     $http.get('data/sightings.json').success(function(result) {
 
       var sightings = _(result)
@@ -25,8 +31,6 @@ angular.module('d3chartsApp')
           return sighting.sightedAt.getTime();
         })
         .value();
-
-
 
       $scope.sightingsByDate = _(sightings)
         .chain()
